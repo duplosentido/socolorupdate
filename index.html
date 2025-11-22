@@ -58,6 +58,13 @@
       opacity: 0.5;
       animation: float 10s infinite ease-in-out alternate;
     }
+    /* Desktop: hạ thêm độ đậm để không lóa */
+@media (min-width: 768px) {
+     .blob {
+       opacity: 0.18;
+       filter: blur(140px);
+     }
+    }
     @keyframes float {
       from { transform: translate(0, 0) scale(1); }
       to   { transform: translate(30px, -30px) scale(1.1); }
