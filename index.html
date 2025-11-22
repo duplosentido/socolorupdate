@@ -23,7 +23,7 @@
     .transition-all { transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
 
     .direction-btn.active {
-      background-color: #fffaf3;
+      background-color: #ffffff;
       box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
       0 2px 4px -1px rgba(0, 0, 0, 0.06);
       border-color: #6366f1;
@@ -49,29 +49,22 @@
       will-change: transform;
       transition: transform 0.3s ease-out;
     }
-    ..blob {
-  position: absolute;
-  width: 130vw;
-  height: 130vw;
-  border-radius: 50%;
-  filter: blur(110px);
-  opacity: 0.28;
-  animation: float 12s infinite ease-in-out alternate;
-}
-/* Desktop: hạ thêm độ đậm để không lóa */
-@media (min-width: 768px) {
-  .blob {
-    opacity: 0.18;
-    filter: blur(140px);
-  }
-}
+    .blob {
+      position: absolute;
+      width: 130vw;
+      height: 130vw;
+      border-radius: 50%;
+      filter: blur(80px);
+      opacity: 0.5;
+      animation: float 10s infinite ease-in-out alternate;
+    }
     @keyframes float {
       from { transform: translate(0, 0) scale(1); }
       to   { transform: translate(30px, -30px) scale(1.1); }
     }
 
     .glass {
-      background: rgba(255, 255, 255, 0.6);
+      background: rgba(255, 255, 255, 0.7);
       backdrop-filter: blur(12px);
       -webkit-backdrop-filter: blur(12px);
       border: 1px solid rgba(255, 255, 255, 0.5);
@@ -849,8 +842,8 @@
 
     function updateAuroraAndLogo() {
       if (!currentProPalette) return;
-      document.getElementById("blob1").style.backgroundColor = chroma(currentProPalette.generic[2]).brighten(1.2).desaturate(1).hex();
-document.getElementById("blob2").style.backgroundColor = chroma(currentProPalette.matching[2]).brighten(1.2).desaturate(1).hex();
+      document.getElementById("blob1").style.backgroundColor = currentProPalette.generic[2];
+      document.getElementById("blob2").style.backgroundColor = currentProPalette.matching[2];
       const logo = document.getElementById("appLogo");
       const gradientText = `linear-gradient(to right, ${currentProPalette.spot[0]}, ${currentProPalette.matching[5]})`;
       logo.style.backgroundImage = gradientText;
