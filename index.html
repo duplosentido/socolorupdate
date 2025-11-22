@@ -49,15 +49,22 @@
       will-change: transform;
       transition: transform 0.3s ease-out;
     }
-    .blob {
-      position: absolute;
-      width: 130vw;
-      height: 130vw;
-      border-radius: 30%;
-      filter: blur(180);
-      opacity: 0.4;
-      animation: float 10s infinite ease-in-out alternate;
-    }
+    ..blob {
+  position: absolute;
+  width: 130vw;
+  height: 130vw;
+  border-radius: 50%;
+  filter: blur(110px);
+  opacity: 0.28;
+  animation: float 12s infinite ease-in-out alternate;
+}
+/* Desktop: hạ thêm độ đậm để không lóa */
+@media (min-width: 768px) {
+  .blob {
+    opacity: 0.18;
+    filter: blur(140px);
+  }
+}
     @keyframes float {
       from { transform: translate(0, 0) scale(1); }
       to   { transform: translate(30px, -30px) scale(1.1); }
